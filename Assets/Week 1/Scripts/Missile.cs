@@ -24,4 +24,10 @@ public class Missile : MonoBehaviour
     {
         rigidbody.MovePosition(rigidbody.position + direction * Time.deltaTime);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Missile hit something");
+        Destroy(gameObject);
+    }
 }
